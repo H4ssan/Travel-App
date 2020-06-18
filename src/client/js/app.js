@@ -6,7 +6,6 @@
     let d = new Date();
     let newDate = d.getMonth()+'.'+ d.getDate()+'.'+ d.getFullYear();
 
-    document.getElementById('generate').addEventListener('click', performEvent);
 
     function performEvent(evt){
         //retrive the user input
@@ -78,6 +77,13 @@
         } catch(error) {
             console.log(error("error"));
         }
+    }
+
+    export {
+        performEvent,
+        getCity,
+        postCity,
+        updateInterface
     }
 
 
