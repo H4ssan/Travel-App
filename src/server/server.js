@@ -39,9 +39,9 @@ app.post('/addData', addData);
 function addData(req, res){
     /* These are three specific pieces of data the POST route will anticipate receiving */
     newEntry = {
-        temperature: req.body.temperature,
-        date: req.body.date,
-        userResponse: req.body.userResponse
+        latitude: req.body.latitude,
+        longitude: req.body.longitude,
+        country: req.body.country
     }
 
       //add data recieved from req.body to the app end point

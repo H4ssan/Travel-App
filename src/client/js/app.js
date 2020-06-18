@@ -1,6 +1,6 @@
 /* Global Variables */
-    let baseURL = 'http://api.openweathermap.org/data/2.5/weather?q=';
-    const apiKey = '&appid=44be7a9e1ad9f23dacdd0361564013e0';
+    let baseURL = 'http://api.geonames.org/postalCodeSearchJSON?placename=';
+    const username = '&username=h4ssan';
 
     // Create a new date instance dynamically with JS
     let d = new Date();
@@ -10,30 +10,28 @@
     function performEvent(evt){
         //retrive the user input
         const newCity = document.getElementById('city').value;
-        const userResponse = document.getElementById('feelings').value;
 
         if(newCity.length == 0){
             alert("Please enter valid city");
             return
-        }else if(userResponse.length == 0){
-            alert("Please enter your feelings");
-            return
         }
         
-        getCity(baseURL, newCity, apiKey)
+        getCity(baseURL, newCity, username)
 
         .then(function(data){
             //add data to POST request
-            postCity('/addData', {date: newDate, temperature: data.weather[0].main, userResponse:userResponse})
+            postCity('/addData', {latitude: data.geonames[0].lat, 
+                                    longitude: data.geonames[0].longitude,
+                                     country: data.geonames[0].country})
 
             updateInterface();
         })
     } 
 
     //GET Request
-    const getCity = async (baseURL, city, apiKey)=>{
+    const getCity = async (baseURL, city, username)=>{
         //set variable to hold fetch calls return
-        const res = await fetch(baseURL + city + apiKey)
+        const res = await fetch(baseURL + city + username)
         try{
             //retrieve data in json format
             const data = await res.json();
