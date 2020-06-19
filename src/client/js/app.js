@@ -20,9 +20,9 @@
 
         .then(function(data){
             //add data to POST request
-            postCity('/addData', {latitude: data.geonames[0].lat, 
-                                    longitude: data.geonames[0].longitude,
-                                     country: data.geonames[0].country})
+            postCity('/addData', {latitude: data.postalCodes[0].lat, 
+                                    longitude: data.postalCodes[0].lng,
+                                     country: data.postalCodes[0].country})
 
             updateInterface();
         })
@@ -38,7 +38,7 @@
             console.log(data);
             return data;
         } catch (error) {
-            console.log(error("error"));
+            console.log(error);
         }
         
     }
@@ -58,7 +58,7 @@
             console.log(newData);
             return newData;
         }catch(error){
-            console.log(error("error"));
+            console.log(error);
         }
     }
 
@@ -70,10 +70,10 @@
             const allData = await request.json()
             console.log(allData);
             document.getElementById('date').innerHTML = "Date: " + newDate;
-            document.getElementById('temp').innerHTML = "Current Forecast: " + allData[allData.length-1].temperature;
+            document.getElementById('temp').innerHTML = "Current Forecast: " + allData.latitude;
             document.getElementById('content').innerHTML = "User Feelings: " + allData[allData.length-1].userResponse;
         } catch(error) {
-            console.log(error("error"));
+            console.log(error);
         }
     }
 
