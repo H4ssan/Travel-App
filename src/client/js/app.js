@@ -6,6 +6,11 @@
     let d = new Date();
     let newDate = d.getMonth()+'.'+ d.getDate()+'.'+ d.getFullYear();
 
+    handleSubmit();
+
+    function handleSubmit() { document.getElementById('generate').addEventListener('click', () =>{
+        performEvent();
+    })}
 
     function performEvent(evt){
         //retrive the user input
@@ -20,9 +25,9 @@
 
         .then(function(data){
             //add data to POST request
-            postCity('/addData', {latitude: data.postalCodes[0].lat, 
+            postCity('http://localhost:8090/addData', {latitude: data.geoNames[0].lat, 
                                     longitude: data.postalCodes[0].lng,
-                                     country: data.postalCodes[0].country})
+                                     country: data.postalCodes[0].countryCode})
 
             updateInterface();
         })
@@ -64,14 +69,14 @@
 
     //update UI
     const updateInterface = async () => {
-        const request = await fetch ('/data')
+        const request = await fetch ('http://localhost:8090/data')
 
         try{
             const allData = await request.json()
             console.log(allData);
-            document.getElementById('date').innerHTML = "Date: " + newDate;
-            document.getElementById('temp').innerHTML = "Current Forecast: " + allData.latitude;
-            document.getElementById('content').innerHTML = "User Feelings: " + allData[allData.length-1].userResponse;
+            // document.getElementById('date').innerHTML = "Date: " + newDate;
+            // document.getElementById('temp').innerHTML = "Current Forecast: " + allData.latitude;
+            // document.getElementById('content').innerHTML = "User Feelings: " + allData[allData.length-1].userResponse;
         } catch(error) {
             console.log(error);
         }

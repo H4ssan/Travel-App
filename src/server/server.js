@@ -20,7 +20,7 @@ app.use(express.static('dist'));
 
 
 // Setup Server
-const port = 8080;
+const port = 8090;
 const server = app.listen(port, listening);
 //callback function
 function listening(){
