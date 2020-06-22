@@ -4,7 +4,7 @@
 
     // Create a new date instance dynamically with JS
     let d = new Date();
-    let newDate = d.getMonth()+'.'+ d.getDate()+'.'+ d.getFullYear();
+    let todayDate = d.getMonth()+'.'+ d.getDate()+'.'+ d.getFullYear();
 
     handleSubmit();
 
@@ -15,7 +15,14 @@
     function performEvent(evt){
         //retrive the user input
         const newCity = document.getElementById('city').value;
+        const startDate  = document.getElementById('travelDate').value;
 
+        //retrieve number of days until departure
+        const timeDifference = new Date(startDate).getTime() - new Date(todayDate).getTime();
+        const daysTillDeparture = timeDifference / (1000 * 3600 * 24);
+        document.getElementById('date').innerHTML = "Days til departure " + daysTillDeparture;
+         
+  
         if(newCity.length == 0){
             alert("Please enter valid city");
             return
@@ -25,9 +32,9 @@
 
         .then(function(data){
             //add data to POST request
-            postCity('http://localhost:8090/addData', {latitude: data.geoNames[0].lat, 
+            postCity('http://localhost:8090/addData', {latitude: data.postalCodes[0].lat, 
                                     longitude: data.postalCodes[0].lng,
-                                     country: data.postalCodes[0].countryCode})
+                                     country: data.postalCodes[0].countryCode}) 
 
             updateInterface();
         })
@@ -86,7 +93,8 @@
         performEvent,
         getCity,
         postCity,
-        updateInterface
+        updateInterface,
+        handleSubmit
     }
 
 
