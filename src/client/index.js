@@ -1,4 +1,5 @@
-import { performEvent, postCity, getCity, updateInterface, handleSubmit } from './js/app'
+import { performEvent, postData, getCity, handleSubmit } from './js/app'
+import { getWeather } from './js/getWeather'
 
 import './styles/style.scss'
 import './styles/form.scss'
@@ -6,8 +7,8 @@ import './styles/form.scss'
 
 export {
     performEvent,
-    postCity,
+    postData,
     getCity,
-    updateInterface,
-    handleSubmit
+    handleSubmit,
+    getWeather
 }

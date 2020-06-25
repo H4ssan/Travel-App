@@ -1,8 +1,6 @@
 /* Global Variables */
-let baseURL = 'http://api.geonames.org/postalCodeSearchJSON?placename=';
+let geoURL = 'http://api.geonames.org/postalCodeSearchJSON?placename=';
 const username = '&username=h4ssan';
-
-
 
 handleSubmit();
 
@@ -18,12 +16,16 @@ function performEvent(evt) {
 
     //retrive the user input
     const newCity = document.getElementById('city').value;
-    const startDate = document.getElementById('travelDate').value;
+
+    const lat = 0;
+    const lng = 0;
+
 
     //retrieve number of days until departure
+    const startDate = document.getElementById('travelDate').value;
     const timeDifference = Math.ceil(new Date(startDate).getTime() - d.getTime());
     const daysTillDeparture = Math.ceil(timeDifference / (1000 * 3600 * 24));
-    document.getElementById('date').innerHTML = "Days til departure " + daysTillDeparture;
+    document.getElementById('temp').innerHTML = "Current Forecast: " + daysTillDeparture;
 
 
     if (newCity.length == 0) {
@@ -31,24 +33,23 @@ function performEvent(evt) {
         return
     }
 
-    getCity(baseURL, newCity, username)
-
+    getCity(geoURL, newCity, username)
         .then(function (data) {
             //add data to POST request
-            postCity('http://localhost:8090/addData', {
-                latitude: data.postalCodes[0].lat,
-                longitude: data.postalCodes[0].lng,
+            postData('http://localhost:8090/addData', {
+                lat = data.postalCodes[0].lat,
+                lng = data.postalCodes[0].lng,
                 country: data.postalCodes[0].countryCode
             })
-
-            updateInterface();
+            Client.getWeather(lat, lng);
         })
+        
 }
 
-//GET Request
-const getCity = async (baseURL, city, username) => {
+//GET city data from Geonames
+const getCity = async (geoURL, city, username) => {
     //set variable to hold fetch calls return
-    const res = await fetch(baseURL + city + username)
+    const res = await fetch(geoURL + city + username)
     try {
         //retrieve data in json format
         const data = await res.json();
@@ -57,11 +58,10 @@ const getCity = async (baseURL, city, username) => {
     } catch (error) {
         console.log(error);
     }
-
 }
 
 //POST Request
-const postCity = async (url = '', data = {}) => {
+const postData = async (url = '', data = {}) => {
     const response = await fetch(url, {
         method: 'POST',
         credentials: 'same-origin',
@@ -80,25 +80,24 @@ const postCity = async (url = '', data = {}) => {
 }
 
 //update UI
-const updateInterface = async () => {
-    const request = await fetch('http://localhost:8090/data')
-
-    try {
-        const allData = await request.json()
-        console.log(allData);
-        // document.getElementById('date').innerHTML = "Date: " + newDate;
-        // document.getElementById('temp').innerHTML = "Current Forecast: " + allData.latitude;
-        // document.getElementById('content').innerHTML = "User Feelings: " + allData[allData.length-1].userResponse;
-    } catch (error) {
-        console.log(error);
-    }
-}
+// const updateInterface = async () => {
+//     const request = await fetch('http://localhost:8090/data')
+//     try {
+//         const allData = await request.json()
+//         console.log(allData);
+//         // document.getElementById('date').innerHTML = "Date: " + newDate;
+//         // document.getElementById('temp').innerHTML = "Current Forecast: " + allData.latitude;
+//         // document.getElementById('content').innerHTML = "User Feelings: " + allData[allData.length-1].userResponse;
+//     } catch (error) {
+//         console.log(error);
+//     }
+// }
 
 export {
     performEvent,
     getCity,
-    postCity,
-    updateInterface,
+    postData,
+    //  updateInterface,
     handleSubmit
 }
 
