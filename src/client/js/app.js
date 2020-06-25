@@ -28,19 +28,19 @@ function performEvent(evt) {
     const startDate = document.getElementById('travelDate').value;
     const timeDifference = Math.ceil(new Date(startDate).getTime() - d.getTime());
     const daysTillDeparture = Math.ceil(timeDifference / (1000 * 3600 * 24));
-    document.getElementById('temp').innerHTML = "Current Forecast: " + daysTillDeparture;
+    document.getElementById('temp').innerHTML = "Days until departure: " + daysTillDeparture;
 
 
     getCity(geoURL, newCity, username)
         .then(function (data) {
             //add data to POST request
             postData('http://localhost:8090/addData', {
-                lat: data.postalCodes[0].lat,
-                lng: data.postalCodes[0].lng,
+                latitude: data.postalCodes[0].lat,
+                longitude: data.postalCodes[0].lng,
                 country: data.postalCodes[0].countryCode
             })
         })
-         Client.getWeather(lat, lng); 
+         Client.getWeather(latitude, longitude); 
 }
 
 //GET city data from Geonames
