@@ -2,6 +2,9 @@
 let geoURL = 'http://api.geonames.org/postalCodeSearchJSON?placename=';
 const username = '&username=h4ssan';
 
+const WB_URL = 'https://api.weatherbit.io/v2.0/current?';
+const wb_api = '&key=73ad71566b4545c4b7a5c867f792c29c';
+
 handleSubmit();
 
 function handleSubmit() {
@@ -16,11 +19,11 @@ function performEvent(evt) {
 
     //retrive the user input
     const newCity = document.getElementById('city').value;
-
-    const lat = 0;
-    const lng = 0;
-
-
+    
+    if (newCity.length == 0) {
+        alert("Please enter valid city");
+        return
+    }
     //retrieve number of days until departure
     const startDate = document.getElementById('travelDate').value;
     const timeDifference = Math.ceil(new Date(startDate).getTime() - d.getTime());
@@ -28,22 +31,16 @@ function performEvent(evt) {
     document.getElementById('temp').innerHTML = "Current Forecast: " + daysTillDeparture;
 
 
-    if (newCity.length == 0) {
-        alert("Please enter valid city");
-        return
-    }
-
     getCity(geoURL, newCity, username)
         .then(function (data) {
             //add data to POST request
             postData('http://localhost:8090/addData', {
-                lat = data.postalCodes[0].lat,
-                lng = data.postalCodes[0].lng,
+                lat: data.postalCodes[0].lat,
+                lng: data.postalCodes[0].lng,
                 country: data.postalCodes[0].countryCode
             })
-            Client.getWeather(lat, lng);
         })
-        
+         Client.getWeather(lat, lng); 
 }
 
 //GET city data from Geonames
