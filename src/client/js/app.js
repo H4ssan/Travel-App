@@ -1,9 +1,8 @@
-/* Global Variables */
+//Geonames url
 let geoURL = 'http://api.geonames.org/postalCodeSearchJSON?placename=';
 const username = '&username=h4ssan';
 
-const WB_URL = 'https://api.weatherbit.io/v2.0/current?';
-const wb_api = '&key=73ad71566b4545c4b7a5c867f792c29c';
+
 
 handleSubmit();
 
@@ -19,7 +18,7 @@ function performEvent(evt) {
 
     //retrive the user input
     const newCity = document.getElementById('city').value;
-    
+
     if (newCity.length == 0) {
         alert("Please enter valid city");
         return
@@ -34,13 +33,21 @@ function performEvent(evt) {
     getCity(geoURL, newCity, username)
         .then(function (data) {
             //add data to POST request
-            postData('http://localhost:8090/addData', {
+            return postData('http://localhost:8090/addData', {
                 latitude: data.postalCodes[0].lat,
                 longitude: data.postalCodes[0].lng,
                 country: data.postalCodes[0].countryCode
             })
         })
-         Client.getWeather(latitude, longitude); 
+        .then(function (res) {
+            const lat = res[0].latitude;
+            const long = res[0].longitude;
+            return { lat, long }
+        })
+        .then(function ({ lat, long }) {
+            Client.getWeather(lat,long,startDate);
+        })
+
 }
 
 //GET city data from Geonames
