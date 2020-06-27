@@ -43,7 +43,10 @@ function addData(req, res){
     newEntry = {
         latitude: req.body.latitude,
         longitude: req.body.longitude,
-        country: req.body.country
+        country: req.body.country,
+        forecast: req.body.forecast,
+        icon: req.body.icon,
+        description: req.body.description
     }
 
       //add data recieved from req.body to the app end point

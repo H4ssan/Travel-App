@@ -11,7 +11,7 @@ function handleSubmit() {
         performEvent();
     })
 }
-
+//function is called once 'generate' button is clicked
 function performEvent(evt) {
     // Create a new date instance dynamically with JS
     let d = new Date();
@@ -27,11 +27,12 @@ function performEvent(evt) {
     const startDate = document.getElementById('travelDate').value;
     const timeDifference = Math.ceil(new Date(startDate).getTime() - d.getTime());
     const daysTillDeparture = Math.ceil(timeDifference / (1000 * 3600 * 24));
+    console.log(startDate);
     document.getElementById('temp').innerHTML = "Days until departure: " + daysTillDeparture;
 
 
     getCity(geoURL, newCity, username)
-        .then(function (data) {
+        .then(function(data) {
             //add data to POST request
             return postData('http://localhost:8090/addData', {
                 latitude: data.postalCodes[0].lat,
@@ -39,13 +40,21 @@ function performEvent(evt) {
                 country: data.postalCodes[0].countryCode
             })
         })
-        .then(function (res) {
+        .then(function(res) {
             const lat = res[0].latitude;
             const long = res[0].longitude;
             return { lat, long }
         })
-        .then(function ({ lat, long }) {
+        .then(function({ lat, long }) {
             Client.getWeather(lat,long,startDate);
+        })
+        .then(function(weatherData) {
+            //add data to POST request
+            return postData('http://localhost:8090/addData', {
+                forecast: weatherData.data[0].max_temp,
+                icon: weatherData.data[0].weather.icon,
+                description: weatherData.data[0].weather.description
+            })
         })
 
 }
