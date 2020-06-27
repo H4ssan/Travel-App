@@ -32,9 +32,9 @@ function performEvent(evt) {
 
 
     getCity(geoURL, newCity, username)
-        .then(function(data) {
+        .then(async function(data) {
             //add data to POST request
-            return postData('http://localhost:8090/addData', {
+            return await postData('http://localhost:8090/addData', {
                 latitude: data.postalCodes[0].lat,
                 longitude: data.postalCodes[0].lng,
                 country: data.postalCodes[0].countryCode
@@ -45,8 +45,8 @@ function performEvent(evt) {
             const long = res[0].longitude;
             return { lat, long }
         })
-        .then(function({ lat, long }) {
-            Client.getWeather(lat,long,startDate);
+        .then(async function({ lat, long }) {
+            return await Client.getWeather(lat,long,startDate);
         })
         .then(function(weatherData) {
             //add data to POST request
