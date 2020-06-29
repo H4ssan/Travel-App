@@ -17,4 +17,6 @@ const updateInterface = async () => {
 
 export {
     updateInterface,
+    getWeather,
+    getImage
 }

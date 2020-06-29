@@ -107,7 +107,10 @@ export {
     performEvent,
     getCity,
     postData,
-    handleSubmit
+    handleSubmit,
+    updateInterface,
+    getWeather,
+    getImage
 }
 
 
