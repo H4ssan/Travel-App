@@ -1,4 +1,6 @@
-import { updateInterface } from "./updateUI";
+import { updateInterface } from "./updateUI.js";
+import { getWeather } from "./getWeather.js";
+import { getImage } from "./pixabay.js";
 
 //Geonames url
 let geoURL = 'http://api.geonames.org/postalCodeSearchJSON?placename=';
@@ -54,9 +56,6 @@ function performEvent(evt) {
                 description: weatherData.data[0].weather.description
             })
         })
-        .then(async function () {
-            return await Client.updateInterface();
-         })
         .then(async function () {
             return await Client.getImage(newCity);
         })

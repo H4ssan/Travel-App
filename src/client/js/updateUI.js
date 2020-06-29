@@ -1,3 +1,5 @@
+import { getWeather } from "./getWeather.js";
+import { getImage } from "./pixabay.js";
 //update UI
 const updateInterface = async () => {
     const request = await fetch('http://localhost:8090/data')
@@ -14,5 +16,5 @@ const updateInterface = async () => {
 }
 
 export {
-    updateInterface
+    updateInterface,
 }
