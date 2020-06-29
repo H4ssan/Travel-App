@@ -46,7 +46,8 @@ function addData(req, res){
         country: req.body.country,
         forecast: req.body.forecast,
         icon: req.body.icon,
-        description: req.body.description
+        description: req.body.description,
+        img: req.body.img
     }
 
       //add data recieved from req.body to the app end point
