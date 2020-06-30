@@ -34,7 +34,7 @@ function performEvent(evt) {
     getCity(geoURL, newCity, username)
         .then(async function (data) {
             //add data to POST request
-            return await postData('http://localhost:8090/addData', {
+            return await postData('http://localhost:8090/geonames', {
                 latitude: data.postalCodes[0].lat,
                 longitude: data.postalCodes[0].lng,
                 country: data.postalCodes[0].countryCode
@@ -50,7 +50,7 @@ function performEvent(evt) {
         })
         .then(function (weatherData) {
             //add data to POST request
-            return postData('http://localhost:8090/addData', {
+            return postData('http://localhost:8090/weatherbit', {
                 forecast: weatherData.data[0].max_temp,
                 icon: weatherData.data[0].weather.icon,
                 description: weatherData.data[0].weather.description
@@ -61,7 +61,7 @@ function performEvent(evt) {
         })
         .then(function (data) {
             //add data to POST request
-            return postData('http://localhost:8090/addData', {
+            return postData('http://localhost:8090/pixabay', {
                 img: data.hits[0].previewURL
             })
         })

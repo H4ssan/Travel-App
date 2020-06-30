@@ -25,33 +25,54 @@ app.use(express.static('dist'));
 const port = 8090;
 const server = app.listen(port, listening);
 //callback function
-function listening(){
+function listening() {
     console.log(`running on localhost : ${port}`);
 };
 
 //GET route
-app.get('/data', function(req, res){
+app.get('/data', function (req, res) {
     //send data back to endpoint
     res.send(projectData);
 });
 
-//post the data to the projectData array
-app.post('/addData', addData);
+//WeatherBit POST route
+app.post('/weatherbit', addWBData);
 
-function addData(req, res){
+function addWBData(req, res) {
     /* These are three specific pieces of data the POST route will anticipate receiving */
     newEntry = {
-        latitude: req.body.latitude,
-        longitude: req.body.longitude,
-        country: req.body.country,
         forecast: req.body.forecast,
         icon: req.body.icon,
         description: req.body.description,
+    }
+    //add data recieved from req.body to the app end point
+    projectData.push(newEntry);
+    res.send(projectData);
+    console.log(projectData);
+}
+
+//Geonames POST route
+app.post('/geonames', addGNData);
+
+function addGNData(req, res) {
+    geonamesData = {
+        latitude: req.body.latitude,
+        longitude: req.body.longitude,
+        country: req.body.country
+    }
+    projectData.push(geonamesData);
+    res.send(projectData);
+    console.log(projectData);
+}
+
+//pixabay POST route
+app.post('/pixabay', addPixabayData);
+
+function addPixabayData(req, res) {
+    pixabayData = {
         img: req.body.img
     }
-
-      //add data recieved from req.body to the app end point
-      projectData.push(newEntry);
-      res.send(projectData);
-      console.log(projectData);
+    projectData.push(pixabayData);
+    res.send(projectData);
+    console.log(projectData);
 }

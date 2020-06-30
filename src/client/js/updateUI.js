@@ -2,7 +2,7 @@ import { getWeather } from "./getWeather.js";
 import { getImage } from "./pixabay.js";
 //update UI
 const updateInterface = async () => {
-    const request = await fetch('http://localhost:8090/data')
+    const request = await fetch('http://localhost:8090/geonames', 'http://localhost:8090/pixabay', 'http://localhost:8090/weatherbit')
     try {
         const allData = await request.json()
         console.log(allData);
