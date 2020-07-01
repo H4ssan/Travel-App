@@ -1,10 +1,7 @@
 import { updateInterface } from "./updateUI.js";
 import { getWeather } from "./getWeather.js";
 import { getImage } from "./pixabay.js";
-
-//Geonames url
-let geoURL = 'http://api.geonames.org/postalCodeSearchJSON?placename=';
-const username = '&username=h4ssan';
+import { getCity } from "./geonames.js";
 
 handleSubmit();
 
@@ -13,25 +10,26 @@ function handleSubmit() {
         performEvent();
     })
 }
+
 //function is called once 'generate' button is clicked
 function performEvent(evt) {
-    // Create a new date instance dynamically with JS
-    let d = new Date();
 
     //retrive the user input
     const newCity = document.getElementById('city').value;
-    const startDate = document.getElementById('travelDate').value;
-
     if (newCity.length == 0) {
         alert("Please enter valid city");
         return
     }
-    //retrieve number of days until departure
-    const timeDifference = Math.ceil(new Date(startDate).getTime() - d.getTime());
-    const daysTillDeparture = Math.ceil(timeDifference / (1000 * 3600 * 24));
-    console.log(startDate);
 
-    getCity(geoURL, newCity, username)
+    const startDate = document.getElementById('travelDate').value;
+    // Create a new date instance dynamically with JS
+    let d = new Date();
+
+    //retrieve number of days until departure
+    const timeDifference = Math.ceil(new Date(departure).getTime() - d.getTime());
+    const daysTillDeparture = Math.ceil(timeDifference / (1000 * 3600 * 24));
+    
+    Client.getCity(newCity)
         .then(async function (data) {
             //add data to POST request
             return await postData('http://localhost:8090/geonames', {
@@ -66,23 +64,10 @@ function performEvent(evt) {
             })
         })
         .then(async function () {
-           return await Client.updateInterface();
+            return await Client.updateInterface();
         })
 }
 
-//GET city data from Geonames
-const getCity = async (geoURL, city, username) => {
-    //set variable to hold fetch calls return
-    const res = await fetch(geoURL + city + username)
-    try {
-        //retrieve data in json format
-        const data = await res.json();
-        console.log(data);
-        return data;
-    } catch (error) {
-        console.log(error);
-    }
-}
 
 //POST Request
 const postData = async (url = '', data = {}) => {
@@ -110,7 +95,7 @@ export {
     handleSubmit,
     updateInterface,
     getWeather,
-    getImage
+    getImage,
 }
 
 

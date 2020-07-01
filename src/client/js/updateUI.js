@@ -6,10 +6,10 @@ const updateInterface = async () => {
     try {
         const allData = await request.json()
         console.log(allData);
-        document.getElementById('image').src = allData.img;
+        document.getElementById('image').src = allData[allData.length - 1].img;
         //  document.getElementById('departure').innerHTML = daysTillDeparture + " days until departure!";
-        document.getElementById('forecast').innerHTML = "Weather forecast: " + allData[allData.length - 1].forecast +
-            allData[allData.length - 1].description + allData[allData.length - 1].icon;
+        document.getElementById('forecast').innerHTML = "Weather forecast: " + allData[allData.length - 2].forecast + "°C " +
+            allData[allData.length - 2].description;
     } catch (error) {
         console.log(error);
     }

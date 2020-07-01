@@ -48,7 +48,7 @@ function addWBData(req, res) {
     //add data recieved from req.body to the app end point
     projectData.push(newEntry);
     res.send(projectData);
-    console.log(projectData);
+    //console.log(projectData);
 }
 
 //Geonames POST route
@@ -62,7 +62,7 @@ function addGNData(req, res) {
     }
     projectData.push(geonamesData);
     res.send(projectData);
-    console.log(projectData);
+   // console.log(projectData);
 }
 
 //pixabay POST route
