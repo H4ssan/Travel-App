@@ -16,17 +16,25 @@
       <label for="city">Where are you travelling to?</label>
       <input type="text" id="city" placeholder="Enter City Here">
     </div>
+
     <div class="date">
-      <label for="travelDate">Enter date of departure</label>
+      <label for="travelDate">Departure date</label>
       <input type="date" class="myInput" id="travelDate" size="4">
+      <label for="returnDate">Return date</label>
+      <input type="date" class="myInput" id="returnDate" size="4">
+    </div>
+
+    <div>
       <button id="generate" type="submit">Generate</button>
     </div>
+
     <div class="entry">
       <div id="entryHolder">
         <div id="departure"></div>
+        <div id="return"></div>
         <div id="forecast"></div>
         <div id="content"></div>
-        <img id="image">  
+        <img id="image">
       </div>
     </div>
   </div>

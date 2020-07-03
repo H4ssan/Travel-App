@@ -35,6 +35,8 @@ app.get('/data', function (req, res) {
     res.send(projectData);
 });
 
+ 
+
 //WeatherBit POST route
 app.post('/weatherbit', addWBData);
 
@@ -43,12 +45,11 @@ function addWBData(req, res) {
     newEntry = {
         forecast: req.body.forecast,
         icon: req.body.icon,
-        description: req.body.description,
+        description: req.body.description
     }
     //add data recieved from req.body to the app end point
     projectData.push(newEntry);
     res.send(projectData);
-    //console.log(projectData);
 }
 
 //Geonames POST route
@@ -62,7 +63,6 @@ function addGNData(req, res) {
     }
     projectData.push(geonamesData);
     res.send(projectData);
-   // console.log(projectData);
 }
 
 //pixabay POST route

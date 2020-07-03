@@ -15,20 +15,30 @@ function handleSubmit() {
 function performEvent(evt) {
 
     //retrive the user input
+    const startDate = document.getElementById('travelDate').value;
+    const returnDate = document.getElementById('returnDate').value;
     const newCity = document.getElementById('city').value;
+    
     if (newCity.length == 0) {
         alert("Please enter valid city");
         return
     }
 
-    const startDate = document.getElementById('travelDate').value;
+    /*===========COUNTDOWN===========*/
     // Create a new date instance dynamically with JS
     let d = new Date();
 
-    //retrieve number of days until departure
-    const timeDifference = Math.ceil(new Date(departure).getTime() - d.getTime());
+    /*=========== retrieve number of days until departure ===========*/
+    const timeDifference = Math.ceil(new Date(startDate).getTime() - d.getTime());
     const daysTillDeparture = Math.ceil(timeDifference / (1000 * 3600 * 24));
-    
+    document.getElementById( 'departure').innerHTML = daysTillDeparture + " days until departure!";
+
+    /*=========== calculate length of trip ===========*/
+    const difference = new Date(returnDate).getTime() - new Date(startDate).getTime();
+    const dayDifference = difference / (1000 * 3600 * 24);
+    document.getElementById('return').innerHTML = "Length of trip: " + dayDifference;
+
+
     Client.getCity(newCity)
         .then(async function (data) {
             //add data to POST request

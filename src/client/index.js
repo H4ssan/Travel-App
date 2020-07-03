@@ -15,5 +15,5 @@ export {
     handleSubmit,
     getWeather,
     getImage,
-    updateInterface
+    updateInterface,
 }
