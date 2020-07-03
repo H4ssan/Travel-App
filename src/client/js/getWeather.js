@@ -5,7 +5,7 @@ const wb_api = '&key=73ad71566b4545c4b7a5c867f792c29c';
 //GET weather data from weatherBit
 const getWeather = async (lat, lng, date) => {
     //set variable to hold fetch calls return
-    const res = await fetch(WB_URL + "lat=" + lat + "&lon=" + lng + "&start_date=" + date +  wb_api);
+    const res = await fetch(WB_URL + "lat=" + lat + "&lon=" + lng + wb_api);
     try {
         //retrieve data in json format
         const data = await res.json();

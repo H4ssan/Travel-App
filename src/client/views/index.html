@@ -12,20 +12,24 @@
     <div class="headline">
       Travel App
     </div>
-    <div class="city">
+
+    <div class="userInput">
       <label for="city">Where are you travelling to?</label>
       <input type="text" id="city" placeholder="Enter City Here">
-    </div>
 
-    <div class="date">
-      <label for="travelDate">Departure date</label>
-      <input type="date" class="myInput" id="travelDate" size="4">
-      <label for="returnDate">Return date</label>
-      <input type="date" class="myInput" id="returnDate" size="4">
-    </div>
+      <div id="travelDate">
+        <label for="travelDate">Departure date</label>
+        <input type="date" class="myInput" size="4">
+      </div>
 
-    <div>
-      <button id="generate" type="submit">Generate</button>
+      <div id="returnDate">
+        <label for="returnDate">Return date</label>
+        <input type="date" class="myInput" size="4">
+      </div>
+      
+      <div id="generate">
+        <button type="submit">Submit</button>
+      </div>
     </div>
 
     <div class="entry">

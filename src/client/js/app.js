@@ -34,7 +34,7 @@ function performEvent(evt) {
     document.getElementById( 'departure').innerHTML = daysTillDeparture + " days until departure!";
 
     /*=========== calculate length of trip ===========*/
-    const difference = new Date(returnDate).getTime() - new Date(startDate).getTime();
+    const difference = new Date(returnDate).getTime() - new Date(startDate).getTime(); 
     const dayDifference = difference / (1000 * 3600 * 24);
     document.getElementById('return').innerHTML = "Length of trip: " + dayDifference;
 
