@@ -3,6 +3,8 @@ import { getWeather } from './js/getWeather'
 import { getImage } from './js/pixabay'
 import { getCity } from './js/geonames'
 import { updateInterface } from './js/updateUI'
+import { showOutput } from './js/styles'
+
 
 import './styles/style.scss'
 import './styles/form.scss'
@@ -16,4 +18,5 @@ export {
     getWeather,
     getImage,
     updateInterface,
+    showOutput
 }

@@ -29,14 +29,7 @@ textarea{
 .userInput{
     background: rgba(59, 74, 107, .4);
     height: fit-content;
-}
-
-#returnDate{
-    float: right;
-}
-
-#travelDate{
-    
+    width: fit-content;
 }
 
 input{
@@ -50,17 +43,6 @@ input{
     border: none;
 }
   
-
-.city{
-    position: relative;
-    bottom: 20%;
-}
-
-.feel{
-    position: relative;
-    bottom: 50%;
-}
-
 
 /* Style for Placeholder Text*/
 ::placeholder { /* Firefox, Chrome, Opera */ 

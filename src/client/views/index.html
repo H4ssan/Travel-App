@@ -13,26 +13,28 @@
       Travel App
     </div>
 
-    <div class="userInput">
-      <label for="city">Where are you travelling to?</label>
-      <input type="text" id="city" placeholder="Enter City Here">
+    <main id="main">
+      <div class="userInput">
+        <label for="city">Where are you travelling to?</label>
+        <input type="text" id="city" placeholder="Enter City Here">
 
-      <div id="travelDate">
-        <label for="travelDate">Departure date</label>
-        <input type="date" class="myInput" size="4">
-      </div>
+        <div id="travelDate">
+          <label for="travelDate">Departure date</label>
+          <input type="date" class="myInput" size="4">
+        </div>
 
-      <div id="returnDate">
-        <label for="returnDate">Return date</label>
-        <input type="date" class="myInput" size="4">
-      </div>
-      
-      <div id="generate">
-        <button type="submit">Submit</button>
-      </div>
-    </div>
+        <div id="returnDate">
+          <label for="returnDate">Return date</label>
+          <input type="date" class="myInput" size="4">
+        </div>
 
-    <div class="entry">
+        <div id="generate">
+          <button onsubmit="return Client.showOutput()" type="submit">Submit</button>
+        </div>
+      </div>
+    </main>
+
+    <div id="output">
       <div id="entryHolder">
         <div id="departure"></div>
         <div id="return"></div>
@@ -41,8 +43,12 @@
         <img id="image">
       </div>
     </div>
-  </div>
 
+    <footer id="footer">
+      <div>linkedin</div>
+    </footer>
+  </div>
+  <script src="../js/styles.js"></script>
 </body>
 
 </html>

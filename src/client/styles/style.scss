@@ -1,28 +1,48 @@
 body{
-    background: #fffff8;
-    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+   // background: #fffff8;
+  //  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    margin: 0;
 }
 
 #app{
     display: grid;
-    grid-auto-rows: minmax(150px, auto);
-    /* grid-template-columns:  */
-    height:100vh;
-    //background: #6fafd8;
-    background-image: url("../media/background.jpg");
+    grid-auto-rows: auto;
+    grid-template-columns: auto; 
     color: white;
-    justify-content: center;
-    grid-gap: 1em;
+    grid-template-areas: "main main main main main main main main"
+    "res res res res res res res res"
+    "ft ft ft ft ft ft ft ft";
     font-size: 20px;
     font-family: 'Oswald', sans-serif;
 }
 
-.entry{
-    background: rgba(59, 74, 107, .4);
-    position: relative;
-    bottom: -65%;
+main{
+    height:100vh;
+    background-image: url("../media/background.jpg");
+    background-size: cover;
+    justify-content: center; 
+    grid-area: main;
 }
 
+#output{
+    display: none;
+    background-color: seashell;
+    grid-area: res;
+    height: 100vh;
+    justify-content: center;
+}
+
+#entryHolder{
+  background: rgba(59, 74, 107, .4);
+  height: fit-content;
+  width: fit-content;
+}
+
+#footer{
+    background-color: sienna;
+    grid-area: ft;
+     margin: 0;
+}
 
 /* Reset style for HTML element on active to have no border*/
 input:focus,
