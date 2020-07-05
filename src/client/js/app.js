@@ -2,12 +2,14 @@ import { updateInterface } from "./updateUI.js";
 import { getWeather } from "./getWeather.js";
 import { getImage } from "./pixabay.js";
 import { getCity } from "./geonames.js";
+import { showOutput } from "./styles.js";
 
 handleSubmit();
 
 function handleSubmit() {
     document.getElementById('generate').addEventListener('click', () => {
         performEvent();
+        Client.showOutput();
     })
 }
 
@@ -106,6 +108,7 @@ export {
     updateInterface,
     getWeather,
     getImage,
+    showOutput
 }
 
 
