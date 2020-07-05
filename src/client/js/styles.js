@@ -1,7 +1,7 @@
 function showOutput(){
     const output = document.getElementById('output');
 
-    if(output.style.display === 'none'){
+    if(getComputedStyle(output, null).display === 'none'){
         output.style.display = 'block';
     }
 }
