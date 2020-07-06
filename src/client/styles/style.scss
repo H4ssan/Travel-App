@@ -17,6 +17,7 @@ body{
 }
 
 #input{ 
+    display: block;
     height:100vh;
     width: 100%;
     border: 3px solid greenyellow;
@@ -32,7 +33,7 @@ body{
     background-color: seashell;
     grid-area: res;
     height: 50vh;
-    justify-content: center;
+  //  justify-content: center;
 }
 
 #entryHolder{
@@ -45,8 +46,11 @@ body{
 #footer{
     background-color: sienna;
     grid-area: ft;
- 
 }
+
+
+
+
 
 /* Reset style for HTML element on active to have no border*/
 input:focus,

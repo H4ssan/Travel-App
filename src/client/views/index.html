@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <title>Travel App</title>
   <link href="https://fonts.googleapis.com/css?family=Oswald:400,600,700|Ranga:400,700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
@@ -14,7 +15,7 @@
     </div>
 
     <main id="main">
-      <div id="input">
+      <section id="input">
         <div class="userInput">
           <label for="city">Where are you travelling to?</label>
           <input type="text" id="city" placeholder="Enter City Here">
@@ -33,9 +34,9 @@
             <button type="submit">Submit</button>
           </div>
         </div>
-      </div>
-      
-      <div id="output">
+      </section>
+
+      <section id="output">
         <div id="entryHolder">
           <div id="departure"></div>
           <div id="return"></div>
@@ -43,11 +44,16 @@
           <div id="content"></div>
           <img id="image">
         </div>
-      </div>
+      </section>
     </main>
 
     <footer id="footer">
-      <div>linkedin</div>
+      <div id="social">
+        <a target=_blank href="https://www.linkedin.com/in/hassan-ashraf12">
+          <img id="li" src="../../client/media/li.png"></a>
+        <a target=_blank href="https://www.github.com/H4ssan">
+          <img id="gh" src="../../client/media/git.png"></a>
+      </div>
     </footer>
   </div>
 
