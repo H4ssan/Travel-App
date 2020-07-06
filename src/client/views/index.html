@@ -14,40 +14,43 @@
     </div>
 
     <main id="main">
-      <div class="userInput">
-        <label for="city">Where are you travelling to?</label>
-        <input type="text" id="city" placeholder="Enter City Here">
+      <div id="input">
+        <div class="userInput">
+          <label for="city">Where are you travelling to?</label>
+          <input type="text" id="city" placeholder="Enter City Here">
 
-        <div id="travelDate">
-          <label for="travelDate">Departure date</label>
-          <input type="date" class="myInput" size="4">
+          <div id="travelDate">
+            <label for="travelDate">Departure date</label>
+            <input type="date" class="myInput" size="4">
+          </div>
+
+          <div id="returnDate">
+            <label for="returnDate">Return date</label>
+            <input type="date" class="myInput" size="4">
+          </div>
+
+          <div id="generate">
+            <button type="submit">Submit</button>
+          </div>
         </div>
-
-        <div id="returnDate">
-          <label for="returnDate">Return date</label>
-          <input type="date" class="myInput" size="4">
-        </div>
-
-        <div id="generate">
-          <button type="submit">Submit</button>
+      </div>
+      
+      <div id="output">
+        <div id="entryHolder">
+          <div id="departure"></div>
+          <div id="return"></div>
+          <div id="forecast"></div>
+          <div id="content"></div>
+          <img id="image">
         </div>
       </div>
     </main>
-
-    <div id="output">
-      <div id="entryHolder">
-        <div id="departure"></div>
-        <div id="return"></div>
-        <div id="forecast"></div>
-        <div id="content"></div>
-        <img id="image">
-      </div>
-    </div>
 
     <footer id="footer">
       <div>linkedin</div>
     </footer>
   </div>
+
 </body>
 
 </html>
