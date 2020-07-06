@@ -16,14 +16,13 @@ body{
     font-family: 'Oswald', sans-serif;
 }
 
-#input{ 
+main{ 
     display: block;
     height:100vh;
-    width: 100%;
     border: 3px solid greenyellow;
     background-image: url("../media/background.jpg");
     background-size: cover;
- //   justify-content: center; 
+    justify-content: center; 
     grid-area: main;
 }
 
@@ -32,8 +31,8 @@ body{
     border: 3px solid greenyellow;
     background-color: seashell;
     grid-area: res;
-    height: 50vh;
-  //  justify-content: center;
+    height: auto;
+    justify-content: center;
 }
 
 #entryHolder{
@@ -42,15 +41,6 @@ body{
   width: fit-content;
   font-size: x-large;
 }
-
-#footer{
-    background-color: sienna;
-    grid-area: ft;
-}
-
-
-
-
 
 /* Reset style for HTML element on active to have no border*/
 input:focus,

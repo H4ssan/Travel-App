@@ -75,7 +75,7 @@ function performEvent(evt) {
         .then(function (data) {
             //add data to POST request
             return postData('http://localhost:8090/pixabay', {
-                img: data.hits[0].previewURL
+                img: data.hits[0].webformatURL
             })
         })
         .then(async function () {

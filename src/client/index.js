@@ -8,6 +8,7 @@ import { showOutput } from './js/styles'
 
 import './styles/style.scss'
 import './styles/form.scss'
+import './styles/footer.scss'
 
 
 export {

@@ -14,45 +14,45 @@
       Travel App
     </div>
 
-    <main id="main">
-      <section id="input">
+    <main>
         <div class="userInput">
-          <label for="city">Where are you travelling to?</label>
-          <input type="text" id="city" placeholder="Enter City Here">
+          <div id="destination">
+            <label for="city">Where are you travelling to?</label>
+            <input type="text" placeholder="Enter City Here" id="city">
+          </div>
 
           <div id="travelDate">
             <label for="travelDate">Departure date</label>
-            <input type="date" class="myInput" size="4">
+            <input type="date" class="myInput">
           </div>
 
           <div id="returnDate">
             <label for="returnDate">Return date</label>
-            <input type="date" class="myInput" size="4">
+            <input type="date" class="myInput">
           </div>
 
           <div id="generate">
             <button type="submit">Submit</button>
           </div>
         </div>
-      </section>
-
-      <section id="output">
-        <div id="entryHolder">
-          <div id="departure"></div>
-          <div id="return"></div>
-          <div id="forecast"></div>
-          <div id="content"></div>
-          <img id="image">
-        </div>
-      </section>
     </main>
+    
+    <section id="output">
+      <div id="entryHolder">
+        <div id="departure"></div>
+        <div id="return"></div>
+        <div id="forecast"></div>
+        <div id="content"></div>
+        <img id="image">
+      </div>
+    </section>
 
     <footer id="footer">
       <div id="social">
         <a target=_blank href="https://www.linkedin.com/in/hassan-ashraf12">
-          <img id="li" src="../../client/media/li.png"></a>
+          <img id="li" src="../media/li.png" /></a>
         <a target=_blank href="https://www.github.com/H4ssan">
-          <img id="gh" src="../../client/media/git.png"></a>
+          <img id="gh" src="../media/git.png" /></a>
       </div>
     </footer>
   </div>
