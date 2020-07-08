@@ -1,6 +1,6 @@
 body{
    // background: #fffff8;
-  //  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     margin: 0;
 }
 
@@ -19,28 +19,13 @@ body{
 main{ 
     display: block;
     height:100vh;
-    border: 3px solid greenyellow;
     background-image: url("../media/background.jpg");
     background-size: cover;
+    margin: 0 auto;
     justify-content: center; 
     grid-area: main;
 }
 
-#output{
-    display: none;
-    border: 3px solid greenyellow;
-    background-color: seashell;
-    grid-area: res;
-    height: auto;
-    justify-content: center;
-}
-
-#entryHolder{
-  background: rgba(59, 74, 107, .4);
-  height: fit-content;
-  width: fit-content;
-  font-size: x-large;
-}
 
 /* Reset style for HTML element on active to have no border*/
 input:focus,

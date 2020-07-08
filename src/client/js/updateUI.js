@@ -8,7 +8,7 @@ const updateInterface = async () => {
         const allData = await request.json()
         console.log(allData);
         document.getElementById('image').src = allData[allData.length - 1].img;
-        document.getElementById('forecast').innerHTML = "Weather forecast: " + allData[allData.length - 2].forecast + "°C " +
+        document.getElementById('forecast').innerHTML = "Weather forecast: " + allData[allData.length - 2].forecast + "°C \n" +
             allData[allData.length - 2].description;
     } catch (error) {
         console.log(error);

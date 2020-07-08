@@ -1,0 +1,16 @@
+#output{
+    display: none;
+    background-color: seashell;
+    grid-area: res;
+    height: auto;
+    padding-left: 20%;
+}
+
+#entryHolder{
+  border: 3px solid black;
+  box-shadow: 2px 4px 5px #444;
+  height: fit-content;
+  width: fit-content;
+  font-size: x-large;
+
+}
