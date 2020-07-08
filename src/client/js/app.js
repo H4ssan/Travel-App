@@ -7,10 +7,16 @@ import { showOutput } from "./styles.js";
 handleSubmit();
 
 function handleSubmit() {
-    document.getElementById('generate').addEventListener('click', () => {
+    
+    const submit = document.getElementById('generate');
+
+    document.addEventListener('DOMContentLoaded', function() {
+        submit.addEventListener('click', () => {
         performEvent();
         Client.showOutput();
     })
+    })
+    
 }
 
 //function is called once 'generate' button is clicked
@@ -102,6 +108,8 @@ const postData = async (url = '', data = {}) => {
         console.log(error);
     }
 }
+
+
 
 export {
     performEvent,

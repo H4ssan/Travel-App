@@ -35,8 +35,6 @@ app.get('/data', function (req, res) {
     res.send(projectData);
 });
 
- 
-
 //WeatherBit POST route
 app.post('/weatherbit', addWBData);
 
