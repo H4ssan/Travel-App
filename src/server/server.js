@@ -10,7 +10,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 
 // Setup empty JS object to act as endpoint for all routes
-projectData = [];
+const projectData = [];
 
 /* Middleware*/
 //Here we are configuring express to use body-parser as middle-ware.
@@ -23,7 +23,10 @@ app.use(express.static('dist'));
 
 // Setup Server
 const port = 8090;
+
+module.exports = app;
 const server = app.listen(port, listening);
+
 //callback function
 function listening() {
     console.log(`running on localhost : ${port}`);
