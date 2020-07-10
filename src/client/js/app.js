@@ -2,7 +2,7 @@ import { updateInterface } from "./updateUI.js";
 import { getWeather } from "./getWeather.js";
 import { getImage } from "./pixabay.js";
 import { getCity } from "./geonames.js";
-import { showOutput } from "./styles.js";
+import { showOutput, scrollToView } from "./styles.js";
 
 handleSubmit();
 
@@ -14,6 +14,7 @@ function handleSubmit() {
         submit.addEventListener('click', () => {
         performEvent();
         Client.showOutput();
+        Client.scrollToView();
     })
     })
     
@@ -119,7 +120,8 @@ export {
     updateInterface,
     getWeather,
     getImage,
-    showOutput
+    showOutput,
+    scrollToView
 }
 
 

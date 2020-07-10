@@ -6,7 +6,16 @@ function showOutput(){
     }
 }
 
-export {
-    showOutput
+function scrollToView(){
+    const button = document.getElementById('generate');
+    const section = document.getElementById('output');
+
+    button.addEventListener('click', () => {
+        section.scrollIntoView();
+    })
 }
 
+export {
+    showOutput,
+    scrollToView
+}

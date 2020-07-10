@@ -3,7 +3,7 @@ import { getWeather } from './js/getWeather'
 import { getImage } from './js/pixabay'
 import { getCity } from './js/geonames'
 import { updateInterface } from './js/updateUI'
-import { showOutput } from './js/styles'
+import { showOutput, scrollToView } from './js/styles'
 
 
 import './styles/style.scss'
@@ -20,5 +20,6 @@ export {
     getWeather,
     getImage,
     updateInterface,
-    showOutput
+    showOutput,
+    scrollToView
 }

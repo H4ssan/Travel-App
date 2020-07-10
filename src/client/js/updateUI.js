@@ -3,6 +3,7 @@ import { getImage } from "./pixabay.js";
 
 //update UI
 const updateInterface = async () => {
+    //fetch data from endpoint
     const request = await fetch('http://localhost:8090/data')
     try {
         const allData = await request.json()
