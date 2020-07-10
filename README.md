@@ -21,9 +21,9 @@ Firstly, the city entered is passed to the Geonames API and this then gets the l
 * Node.js (Express)
 * Webpack
 * Babel
-* Geonames
-* Weatherbit
-* Pixabay
+* Geonames API
+* Weatherbit API 
+* Pixabay API
 
 # References
 * http://www.geonames.org/export/web-services.html
