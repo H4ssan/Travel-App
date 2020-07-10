@@ -3,7 +3,6 @@
     background-color: seashell;
     grid-area: res;
     height: auto;
-    padding-left: 20%;
 }
 
 #entryHolder{
@@ -12,4 +11,10 @@
   height: fit-content;
   width: fit-content;
   font-size: x-large;
+  margin: auto;
+}
+
+#image{
+  width: 100%;
+  height: auto;
 }

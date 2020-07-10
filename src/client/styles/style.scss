@@ -1,5 +1,4 @@
 body{
-   // background: #fffff8;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     margin: 0;
 }
@@ -9,10 +8,10 @@ body{
     grid-auto-rows: auto;
     grid-template-columns: auto; 
     color: white;
-    grid-template-areas: "main main main main main main main main"
-    "res res res res res res res res"
-    "ft ft ft ft ft ft ft ft";
-    font-size: 20px;
+    grid-template-areas: "main"
+    "res"
+    "ft";
+    font-size: 15px;
     font-family: 'Oswald', sans-serif;
 }
 
@@ -36,11 +35,25 @@ button:focus {
 }
 
 
-@media (max-width: 870px){
-    .entry{
-        top: 40%;
-    }
-    button{
-        right: 40%;
+// @media (max-width: 870px){
+//     .entry{
+//         top: 40%;
+//     }
+//     button{
+//         right: 40%;
+//     }
+// }
+
+@media (min-width: 1101px){
+    #app{
+        display: grid;
+        grid-auto-rows: auto;
+        grid-template-columns: auto; 
+        color: white;
+        grid-template-areas: "main main main main main main main main"
+        "res res res res res res res res"
+        "ft ft ft ft ft ft ft ft";
+        font-size: 20px;
+        font-family: 'Oswald', sans-serif;
     }
 }
