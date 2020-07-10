@@ -1,4 +1,4 @@
-# Weather-Journal App Project
+# Travel Application
 This is my 4th project as part of the Udacity Front End Developer Nanodegree Program.
 ## Overview
 This is a travel application which pulls data from various APIs. 
