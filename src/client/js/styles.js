@@ -3,6 +3,7 @@ function showOutput(){
 
     if(getComputedStyle(output, null).display === 'none'){
         output.style.display = 'block';
+        output.scrollIntoView();
     }
 }
 
