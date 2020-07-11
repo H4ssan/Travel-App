@@ -5,8 +5,8 @@ label{
 }
 
 button{
-    width: 300px;
-    height: 50px;
+    width: 125px;
+    height: 40px;
     background: #3b4a6b;
     color: white;
     font-size: 26px;
@@ -14,7 +14,7 @@ button{
     border: none;
     box-shadow: 2px 4px 5px #444;
     margin: 0 auto;
-    margin-top: 5%;
+    margin-top: 10%;
     cursor: pointer;
 }
 
@@ -36,7 +36,7 @@ textarea{
 .userInput{
     background: rgba(59, 74, 107, .4);
     height: fit-content;
-    width: 400px;
+    width: 200px;
     margin:0 auto;
     margin-top: 20%;
     text-align: center;
@@ -47,8 +47,8 @@ textarea{
 }
 
 input{
-    height: 60px;
-    width: 200px;
+    height: 40px;
+    width: 175px;
     background: whitesmoke;
     color: black;
     font-size: 20px;
@@ -76,15 +76,20 @@ input{
 
 } 
 
-@media (min-width:700px) and (max-width: 1100px){
+@media (min-width:550px) and (max-width: 1000px){
     .userInput{
         margin: 0 auto;
-        margin-top: 5%;
+        margin-top: 15%;
+        width: 450px;
+    }
+
+    button{
+        width: 300px;
     }
 }
 
 
-@media (min-width: 1101px){
+@media (min-width: 1000px){
     .userInput{
         width: 500px;  
         }
@@ -106,5 +111,11 @@ input{
     button{
         margin: auto;
         margin-top: 5%;
+        width: 300px;
+    }
+
+    input{
+        height: 60px;
+        width: 200px;
     }
 }  

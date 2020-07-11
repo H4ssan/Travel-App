@@ -5,7 +5,7 @@ body{
 
 #app{
     display: grid;
-    grid-auto-rows: auto;
+    grid-auto-rows: minmax(50px, auto);
     grid-template-columns: auto; 
     color: white;
     grid-template-areas: "main"

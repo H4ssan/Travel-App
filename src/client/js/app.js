@@ -4,21 +4,16 @@ import { getImage } from "./pixabay.js";
 import { getCity } from "./geonames.js";
 import { showOutput, scrollToView } from "./styles.js";
 
-handleSubmit();
-
-function handleSubmit() {
-    
+document.addEventListener('DOMContentLoaded', () => {
     const submit = document.getElementById('generate');
-
-    document.addEventListener('DOMContentLoaded', function() {
-        submit.addEventListener('click', () => {
+    submit.addEventListener('click', () => {
         performEvent();
         Client.showOutput();
         Client.scrollToView();
     })
-    })
-    
-}
+})
+
+
 
 //function is called once 'generate' button is clicked
 function performEvent(evt) {
@@ -116,7 +111,6 @@ export {
     performEvent,
     getCity,
     postData,
-    handleSubmit,
     updateInterface,
     getWeather,
     getImage,
