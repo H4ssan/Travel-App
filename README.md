@@ -1,12 +1,34 @@
-# Weather-Journal App Project
-This is my 3rd project as part of the Udacity Front End Developer Nanodegree Program.
+# Travel Application
+This is my 4th project as part of the Udacity Front End Developer Nanodegree Program.
 ## Overview
-For this project I created an asynchronous web app that uses a Web API and user data to dynamically update the UI.
-Users can enter their location followed by how they feel and then the API retrieves the weather for that specific location and outputs it alongside the date and the users information about how they feel. 
+This is a travel application which pulls data from various APIs. 
+The user enters their destination city and travel/return dates. They will then be provided with weather forecast, the length of their trip and a picture of the city they're travelling to. 
+Firstly, the city entered is passed to the Geonames API and this then gets the longitude and latitude of the location. The longitude and latitude is then passed to the Weatherbit API, which uses this information to get an accurate weather forecast. The city entered is also passed to the Pixabay API which retrieves a picture relevant to the city.  
 
-This was developed using Javascript, HTML, CSS, NodeJS, ExpressJS and Open Weather Map API.
+# To run this app
+* Clone, fork or download this repo
+* In the terminal run:
+  * npm i
+  * npm run build-prod
+  * npm run start
+  * Then navigate to localhost:8080
+
+# Dependencies
+* HTML
+* CSS
+* Javascript
+* Sass
+* Node.js (Express)
+* Webpack
+* Babel
+* Geonames API
+* Weatherbit API 
+* Pixabay API
 
 # References
-https://openweathermap.org/
+* http://www.geonames.org/export/web-services.html
+* https://www.weatherbit.io
+* https://pixabay.com/api/docs/
+
 
 
