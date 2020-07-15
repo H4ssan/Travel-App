@@ -1,5 +1,3 @@
-# Travel Application
-This is my 4th project as part of the Udacity Front End Developer Nanodegree Program.
 ## Overview
 This is a travel application which pulls data from various APIs. 
 The user enters their destination city and travel/return dates. They will then be provided with weather forecast, the length of their trip and a picture of the city they're travelling to. 
