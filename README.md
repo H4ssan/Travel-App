@@ -9,7 +9,7 @@ Firstly, the city entered is passed to the Geonames API and this then gets the l
   * npm i
   * npm run build-prod
   * npm run start
-  * Then navigate to localhost:8080
+  * Then navigate to localhost:8090
 
 # Dependencies
 * HTML
