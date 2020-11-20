@@ -1,7 +1,10 @@
 ## Overview
 This is a travel application which pulls data from various APIs. 
 The user enters their destination city and travel/return dates. They will then be provided with weather forecast, the length of their trip and a picture of the city they're travelling to. 
-Firstly, the city entered is passed to the Geonames API and this then gets the longitude and latitude of the location. The longitude and latitude is then passed to the Weatherbit API, which uses this information to get an accurate weather forecast. The city entered is also passed to the Pixabay API which retrieves a picture relevant to the city.  
+Firstly, the city entered is passed to the Geonames API and this then gets the longitude and latitude of the location. The longitude and latitude is then passed to the Weatherbit API, which uses this information to get an accurate weather forecast. The city entered is also passed to the Pixabay API which retrieves a picture relevant to the city. 
+
+# Demo
+![Alt Text](TravelApp.gif)
 
 # To run this app
 * Clone, fork or download this repo
